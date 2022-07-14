@@ -21,17 +21,27 @@ int main()
 
     // cout << "I AM OUTSIDE THE LOOP!\n";
 
+    // int n{};
+    // cout<<"ENTER THE NUMBER : ";
+    // cin>>n;
 
-    int n{};
-    cout<<"ENTER THE NUMBER : ";
-    cin>>n;
+    // int sum{};
+    // for(int i {1}; i<=n; i++){
+    //     sum += i;  // sum = sum+i;
+    //     cout<<sum<<endl;
 
-    int sum{};
-    for(int i {1}; i<=n; i++){
-        sum += i;  // sum = sum+i;
-        cout<<sum<<endl;
-        
+    // }
+
+    // cout<<"SUM IS : "<<sum;
+
+    for (int i{}; i < 5; i++)
+    { // outer
+        if (i == 3)
+            continue;
+        cout << "i: " << i << " ";
+
+        cout << "outer Loop" << endl;
     }
 
-    cout<<"SUM IS : "<<sum; 
+    cout << "MOst OUter";
 }
