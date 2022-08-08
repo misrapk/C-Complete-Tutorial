@@ -3,6 +3,7 @@
         "*.html": "html",
         "iostream": "cpp",
         "ostream": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "string": "cpp"
     }
 }
