@@ -20,13 +20,12 @@ void multipleParameters(int a, int b, int c)
     cout << "a: " << a << endl;
     cout << "b: " << b << endl;
     cout << "c: " << c << endl;
-}
+} // c, b, a out of scope & destroyed
 
 int main()
 {
     // int num{getUserInput()};
     // getDouble();
-
     // cout << "YOU HAVE ENTERED: " << num << endl;
 
     int num1{2};
@@ -35,3 +34,4 @@ int main()
 
     multipleParameters(num1, num2, num3);
 }
+
