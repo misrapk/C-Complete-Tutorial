@@ -7,6 +7,7 @@ private:
     string pName;
     int pHealth;
     int pXp;
+    
 
 public:
     Player() : Player("none", 0,0)
