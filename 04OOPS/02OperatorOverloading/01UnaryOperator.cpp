@@ -39,9 +39,16 @@ public:
 
     //hw
     //TODO: postifx decrement
-
+    void operator--(){
+        --latitude;
+        --longitude;
+    }
 
     //TODO: prefix decerement
+    void operator--(int){
+        latitude--;
+        longitude--;
+    }
 
 
 };
