@@ -8,78 +8,75 @@ class Person{
 public:
     string pName{};
     int pAge{};
-    string pGender{};
-
-    Person(const string& name=" ", int age=0, const string& gender=" ")
-        : pName{name}, pAge{age}, pGender{gender}{
-            cout<<"Person Constructor Called\n";
-        }
+    
+    Person(const string& name="", int age=0)
+    :pName{name}, pAge{age}{
+        cout<<"Person Constructor Called\n";
+    }
 
     const string& getName(){
         return pName;
     }
-    int getAge(){return pAge;};
-    const string& getGender(){
-        return pGender;
+    int getAge(){
+        return pAge;
+    }
+
+};
+
+//Person CLass --> Student Class
+class Student : public Person{
+
+public:
+    int sRollNo{};
+    int sMarks{};
+
+    Student(int rollNo=0, int marks=0)
+        : sRollNo{rollNo}, sMarks{marks}{
+            cout<<"Student Constructor Called\n";
+    }
+
+    int getMarks(){
+        return sMarks;
     }
 };
 
-//TODO: Derived Student Class
-// class DerivedClassName: access_specifier BaseClassName;
-
-class Student: public Person
-{
-    public:
-        int sRollNo{};
-        int sMarks{};
-
-        Student(int rollNo=0, int marks=0)
-        : sRollNo{rollNo}, sMarks{marks}{
-            cout<<"Student Constructor Called\n";
-        }
-        int getMarks(){
-            return sMarks;
-        }
-
-};
-
-//TODO: HW to create Monitor Derived from Student Class;
-class Monitor: public Student{
-    //functions 
-};
-
-//TODO: HockeyPlayer class
+//HockeyPlayer --> Person
 class HockeyPlayer: public Person{
-    public:
-        int hGoals{};
-        string hRole{};
 
-        HockeyPlayer(int goals=0, const string& role="player")
-        :  hGoals{goals}, hRole{role}{
-            cout<<"HockeyPlayer Constructor Called\n";
-        }
+public:
+    int hGoals{};
+    string hRole{};
 
-        const string& getRole(){
-            return hRole;
-         }
-        int getGoals(){
-            return hGoals;
-        }
+    HockeyPlayer(int goals = 0, const string& role = "")
+    : hGoals{goals}, hRole{role}{
+        cout<<"HockeyPlayer constructor called\n";
+    }
+
+    const string& getRole(){
+        return hRole;
+    }
+
+    int getGoals(){
+        return hGoals;
+    }
 };
+
 
 int main(){
-    //main code
-    Student ramesh{20, 80};
-    HockeyPlayer p1{4, "captain"};
 
-    //student1
-    ramesh.pName = "Ramesh";
-    ramesh.pAge = 18;
-    ramesh.pGender = "M";
-    cout<<ramesh.getName()<<" is "<<ramesh.getAge()<<" years old. He got "<<ramesh.getMarks()<<" marks outof 100\n";
+    Student s1{10, 80};
 
-    //player1
-    p1.pName ="Harvinder Singh";
-    p1.pAge = 23;
-    cout<<p1.getName()<<" is "<<p1.getRole()<<" and goals = "<<p1.getGoals()<<endl;
+    //student
+    s1.pName = "Arjun";
+    s1.pAge = 16;
+
+    cout<<s1.getName()<<" is "<<s1.getAge()<<" years old\n";
+
+    //hockeyplayer
+    HockeyPlayer h1{4, "captain"};
+
+    h1.pName = "Sandeep Singh";
+    h1.pAge = 29;
+    
+    cout<<h1.getName()<<" is "<<h1.getRole()<<" and he has scored "<<h1.getGoals()<<" no. of Goals!\n";
 }
